@@ -1,9 +1,12 @@
 # Terraform Project
 
-This repository contains Terraform configurations for setting up various infrastructure components such as state locking, VPC, and EC2 instances.
+This project contains Terraform configurations for managing infrastructure, including state locking, VPC, and EC2 instances.
 
 ## Directory Structure
 
+The following is the directory structure of this project:
+
+```plaintext
 terraform/
 ├── state_locking/
 │   ├── dynamodb.tf
