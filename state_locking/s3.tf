@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "tf_state" {
-  bucket = "vault-terraform-bucket"
+  bucket = var.tf_bucket-name
   
   # Other configurations (e.g., server-side encryption, versioning) can remain here...
   
@@ -11,11 +11,7 @@ resource "aws_s3_bucket" "tf_state" {
   }
 }
 
-# Separate resource to define the ACL for the bucket
-resource "aws_s3_bucket_acl" "tf_state_acl" {
-  bucket = aws_s3_bucket.tf_state.id
-  acl    = "private"
-}
+
 
 resource "aws_s3_bucket_versioning" "tf_state_versioning" {
   bucket = aws_s3_bucket.tf_state.bucket
