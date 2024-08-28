@@ -10,6 +10,7 @@ output "private_subnet" {
   value = module.vpc.private_subnets
 }
 
-output "aws_security_group" {
-  value = aws_security_group.vault_sg.id
+# modules/vpc/outputs.tf
+output "vpc_security_group_ids" {
+  value = aws_security_group.vault_sg.*.id
 }
